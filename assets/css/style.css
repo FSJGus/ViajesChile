@@ -1,0 +1,12 @@
+.fa-solid,
+.fas {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+/* Estilos para el Navbar cuando se hace scroll down.*/
+.navbar-fixed-top.scrolled {
+  background-color: #0dcaf0 !important;
+  transition: background-color 5000ms linear;
+  background-blend-mode: multiply !important;
+}
