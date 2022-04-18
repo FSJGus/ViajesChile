@@ -1,12 +1,38 @@
 .fa-solid,
-.fas {
+.fas
+{
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
 }
 
 /* Estilos para el Navbar cuando se hace scroll down.*/
 .navbar-fixed-top.scrolled {
-  background-color: #0dcaf0 !important;
+  background-color: #0dcaf0;
   transition: background-color 5000ms linear;
   background-blend-mode: multiply !important;
+}
+
+h2 {
+  display: inline !important;
+  font-family: 'Nova Slim', sans-serif;
+  margin: 0 20px 0 150px !important;
+  position: relative;
+  box-sizing: border-box;
+  
+}
+
+.footer-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 90px;
+  
+}
+
+#footerTitle {
+  text-decoration: none;
+}
+#footerTitle:hover {
+   text-decoration: underline;
 }

@@ -13,15 +13,22 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Fontawesome -->
-    
+
     <script src="https://kit.fontawesome.com/b689f6171c.js" crossorigin="anonymous"></script>
 
-    <!-- Local CSS Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap" rel="stylesheet">
+
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.svg">
 
+
+
+    <!-- Local CSS Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -30,8 +37,8 @@
     <nav>
 
     </nav>
-    <!-- MAIN -->  
-    <nav class="navbar navbar-expand-lg fixed-top navbar-fixed-top"> 
+    <!-- MAIN -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-fixed-top">
         <div class="container">
             <a class="navbar-brand text-light" href="#"><img src="assets/img/viajes.svg" alt="Logo Navbar" width="40px"
                     class="mx-2">Viajes Chile</a>
@@ -45,13 +52,13 @@
                         <a class="nav-link active text-light" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Quiénes Somos</a>
+                        <a class="nav-link text-light" href="#quienes">Quiénes Somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Destacados</a>
+                        <a class="nav-link text-light" href="#destacados">Destacados</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light">Contacto</a>
+                        <a class="nav-link text-light" href="#contacto">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -82,15 +89,15 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-
+        <p id="quienes"></p>
         <!-- Segunda fila -->
-        <aside id="quienesSomos" class="container d-none d-md-block">
+        <aside class="container d-none d-md-block">
             <h3 class="text-light text-center my-5">¿QUIÉNES SOMOS?</h3>
             <hr class="text-light">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="container bg-info my-2 text-light">
-                        
+                    <div class="container bg-info my-2 text-light text-center">
+                        <i class="fa-solid fa-plane"></i>
                     </div>
                     <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                         incididunt ut
@@ -111,12 +118,12 @@
                         aenean vel elit. Nulla malesuada pellentesque elit eget gravida cum sociis natoque. Eu ultrices
                         vitae auctor eu augue. Hac habitasse platea dictumst quisque. Lectus proin nibh nisl condimentum
                         id venenatis.</p>
-                    <div class="container bg-info my-2">
-                        <i class="fa-solid fa-mountain text-light"></i>
+                    <div class="container bg-info my-2 text-center text-light">
+                        <i class="fa-solid fa-mountain"></i>
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="container bg-info my-2">
+                    <div class="container bg-info my-2 text-center text-light">
                         <i class="fa-solid fa-route"></i>
                     </div>
                     <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -129,10 +136,10 @@
                 </div>
             </div>
         </aside>
-        
+
         <!-- </div> -->
         <!-- Tercera fila -->
-        <div class="container">
+        <div class="container" id="destacados">
             <h3 class="text-light text-center my-5">DESTACADOS</h3>
             <hr class="text-light">
             <div class="row mt-4">
@@ -199,9 +206,9 @@
             </div>
 
             <!-- Cuarta fila -->
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-10">
-                    <form>
+            <form id="contacto" name="myForm">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-10">
                         <fieldset>
                             <legend class="text-center text-light h-3 my-5">
                                 CONTACTO</legend>
@@ -209,41 +216,45 @@
                             <div class="mb-3">
                                 <label for="exampleInputName" class="form-label text-light ">Nombre</label>
                                 <input type="text" class="form-control" id="exampleInputText"
-                                    aria-describedby="emailHelp">
+                                    aria-describedby="emailHelp" name="fName">
 
                                 <label for="exampleInputName" class="form-label text-light ">Asunto</label>
                                 <input type="text" class="form-control" id="exampleInputText2"
-                                    aria-describedby="textHelp">
+                                    aria-describedby="textHelp" name="fSubject">
                             </div>
                             <div class="mb-3">
                                 <label for="textMensaje" class="form-label text-light" data-bs-toggle="tooltip"
                                     data-bs-placement="top" title=""
                                     data-bs-original-title="Ingrese requerimiento, sugerencia o reclamo.">Mensaje</label>
-                                <textarea class="form-control" id="textMensaje" rows="3"></textarea>
+                                <textarea class="form-control" id="textMensaje" rows="3" name="fMessage"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+
+                            <button type="submit" class="btn btn-primary" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" title="Haga click aquí para enviar"
+                                onclick="validateForm();">
+                                Enviar
+                            </button>
                         </fieldset>
-                    </form>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="ms-auto">
-        <div class="container-fluid">
-            <div class="row bg-info" height="100px;">
-                <div class="col-12 col-md-4 text-center text-md-start">
-                    <h2 class="text-light d-inline-block">VIAJES CHILE</h2>
-                </div>
-                <div class="col-12 col-md-6 text-center text-md-end ms-auto">
-                    <i class="fa-brands fa-github d-inline-block"></i>
-                    <i class="fa-brands fa-linkedin d-inline-block"></i>
-                    <i class="fa-brands fa-twitter-square d-inline-block"></i>
-                    <i class="fa-brands fa-facebook-square d-inline-block"></i>
-                </div>
+    <footer class="footer mt-5 bg-info ">
+
+        <div class="row footer-row">
+            <div class="col-xs-12 col-md-12 text-center d-flex align-items-center">
+                <a href="#" id="footerTitle"><h2 class="h2 text-light">Viajes Chile</h2></a>
+
+                <i class="fa-brands fa-github fa-xl p-1 text-light"></i>
+                <i class="fa-brands fa-linkedin fa-xl p-1 text-light"></i>
+                <i class="fa-brands fa-twitter-square fa-xl p-1 text-light"></i>
+                <i class="fa-brands fa-facebook-square fa-xl p-1 text-light"></i>
             </div>
-        </div>
+            </div>
+
     </footer>
 
 
